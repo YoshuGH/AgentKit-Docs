@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AgentKit Docs Site
+    url: https://yoshugh.github.io/AgentKit-Docs/support/
+    about: Read the guides and see what to include in a support request.

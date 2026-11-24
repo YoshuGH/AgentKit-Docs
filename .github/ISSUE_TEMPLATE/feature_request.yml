@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a new workflow or an improvement to AgentKit.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: What are you trying to do?
+      description: Describe the task in Unreal Editor and where you get stuck.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What should the agent do?
+      description: Include an example prompt and the result you would expect.
+    validations:
+      required: true
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+      description: If you have a workaround, describe how you use it.
