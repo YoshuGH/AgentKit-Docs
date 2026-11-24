@@ -1,0 +1,22 @@
+---
+title: Limits & safety
+---
+
+## Saved changes
+
+Build and edit tools compile and save the target asset. Use a new path for experiments and save a recovery point before editing an existing asset. Check your project's file-locking rules before asking the agent to write to it.
+
+Builds don't change an existing asset unless you allow updates. When updates are allowed, they edit named elements in place and keep omitted elements. If a build fails partway through, review the error and the asset in the editor before saving. Some changes can remain in memory.
+
+## Supported editing
+
+- Widget builds cover local UMG panel hierarchies and supported Blueprint logic. Inherited widget trees, named slots, and widget event wiring require other editor tools.
+- Animation builds replace each specified animation as a whole. AgentKit refuses to replace an animation that differs from its local snapshot or has no snapshot unless the agent explicitly allows discarding edits. Ask for a review before approving a replacement.
+- AgentKit can change how an existing MVVM viewmodel is created when the engine allows it. Create viewmodels and bindings with Unreal's MVVM tools.
+- Validation compiles Blueprints without saving. Use the Output Log when a failure has no compiler diagnostic.
+
+## Capture limits
+
+Captures need rendering enabled in Unreal Editor. Effects such as background blur or retainer boxes, or anything that needs a real viewport, can look different, and runtime data appears at design-time defaults. Check the UMG Designer when exact appearance matters.
+
+Static widget captures are capped at 8192 pixels per side. Animation sheets support up to 16 poses and 4096 pixels per side for the full grid. The MCP image viewer serves only PNG files under the project's `Saved/AgentKit/` directory.

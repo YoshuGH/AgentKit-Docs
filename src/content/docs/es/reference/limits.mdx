@@ -1,0 +1,22 @@
+---
+title: Límites y seguridad
+---
+
+## Cambios guardados
+
+Las herramientas de creación y edición compilan y guardan el recurso de destino. Usa una ruta nueva para experimentar y guarda un punto de recuperación antes de editar un recurso existente. Revisa las reglas de bloqueo de archivos de tu proyecto antes de pedirle al agente que escriba en él.
+
+Las herramientas no cambian un recurso existente a menos que permitas actualizarlo. Cuando se permite, las herramientas editan los elementos identificados por nombre y conservan los elementos omitidos. Si una operación falla a la mitad, revisa el error y el recurso en el editor antes de guardar. Es posible que algunos cambios queden en memoria.
+
+## Edición compatible
+
+- La creación de widgets admite jerarquías de paneles UMG locales y lógica de Blueprint compatible. Los árboles de widgets heredados, las ranuras con nombre y las conexiones de eventos de widgets requieren otras herramientas del editor.
+- La creación de animaciones reemplaza por completo cada animación indicada. AgentKit rechaza el reemplazo si la animación difiere de su copia de referencia local o no tiene una, a menos que el agente permita explícitamente descartar los cambios. Pide una revisión antes de aprobar el reemplazo.
+- AgentKit puede cambiar cómo se crea un viewmodel existente cuando el motor lo permite. Usa las herramientas MVVM de Unreal para crear viewmodels y enlaces.
+- La validación compila los Blueprints sin guardarlos. Consulta el Output Log cuando un fallo no incluya un diagnóstico del compilador.
+
+## Límites de captura
+
+Las capturas requieren que el renderizado esté habilitado en Unreal Editor. Los efectos como el desenfoque de fondo o los retainer boxes, o cualquier cosa que necesite un viewport real, pueden verse distintos. Los datos del juego aparecen con sus valores predeterminados de diseño. Si necesitas verificar la apariencia exacta, consulta el diseñador de UMG.
+
+Las capturas estáticas de widgets tienen un límite de 8192 píxeles por lado. Las hojas de animación admiten hasta 16 poses y 4096 píxeles por lado para toda la cuadrícula. El visor MCP solo muestra archivos PNG del directorio `Saved/AgentKit/` del proyecto.

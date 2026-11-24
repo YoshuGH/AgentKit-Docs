@@ -1,0 +1,15 @@
+---
+title: Asset validation
+---
+
+Use asset validation after editing Blueprints or before handing changes to someone else. It checks whether assets load and reports compilation diagnostics for Blueprints.
+
+> Validate `WBP_InventoryHeader` and `BP_InteractionMarker` in `/Game/AgentKitDemo`. For each asset, tell me whether it loaded and list any compiler errors or warnings. Leave fixes for me to review.
+
+1. The agent sends the asset paths to `validate_assets`.
+2. AgentKit loads both assets and compiles the Blueprints without saving them.
+3. The agent groups any diagnostics by asset and severity.
+
+You get a list of issues to review, or confirmation that the check returned no diagnostics. Use the Output Log if a compiler failure comes back without a message.
+
+{/* TODO: screenshot of Blueprint compiler diagnostics in Unreal Editor. */}

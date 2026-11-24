@@ -1,0 +1,18 @@
+---
+title: Conjuntos de herramientas
+sidebar:
+  label: Conjuntos y herramientas
+---
+
+AgentKit agrupa sus herramientas por flujo de trabajo del editor. Un cliente MCP puede encontrar los grupos con `list_toolsets` y consultar sus herramientas con `describe_toolset`.
+
+| Conjunto | Herramientas | Qué puedes pedirle al agente |
+| --- | --- | --- |
+| `AgentKitWidgetTools` | `build_widget`, `describe_widget` | Crear una jerarquía UMG con propiedades y lógica de Blueprint compatible, o inspeccionar un Widget Blueprint. |
+| `AgentKitBlueprintTools` | `build_blueprint`, `describe_blueprint` | Crear o actualizar un Blueprint que no sea un widget, o inspeccionar sus componentes, variables y lógica. |
+| `AgentKitAnimationTools` | `build_animations`, `describe_animations`, `sample_animation`, `diff_animation` | Crear animaciones UMG, inspeccionar pistas, revisar tiempos y comparar cambios con la última creación de AgentKit. |
+| `AgentKitMVVMTools` | `describe_mvvm`, `set_viewmodel_context` | Inspeccionar viewmodels y enlaces, o cambiar cómo se crea un viewmodel existente. |
+| `AgentKitCaptureTools` | `CaptureWidget`, `CaptureAnimation`, `CaptureSlate` | Guardar vistas previas en PNG de widgets, poses de animación o la interfaz del editor. |
+| `AgentKitAssetTools` | `validate_assets` | Comprobar que los recursos carguen e informar los diagnósticos de compilación de Blueprints. |
+
+La herramienta MCP `agentkit_view_image` permite que el agente vea una captura guardada como imagen cuando no tiene acceso a archivos locales.

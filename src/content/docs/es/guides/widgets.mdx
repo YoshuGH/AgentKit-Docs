@@ -1,0 +1,15 @@
+---
+title: Widgets
+---
+
+Usa AgentKit para crear un diseño en UMG, agregar variables y lógica compatible de Blueprint, o inspeccionar el diseño de un Widget Blueprint existente.
+
+> Crea `WBP_InventoryHeader` como un Widget Blueprint nuevo en `/Game/AgentKitDemo`. Coloca «Inventario» y «0 objetos» en una fila horizontal con espaciado interno. Valida el recurso y muéstrame el diseño.
+
+1. El agente usa `build_widget` para crear la fila y sus widgets de texto. Luego compila y guarda el Widget Blueprint.
+2. Lee la jerarquía y el diseño resultantes con `describe_widget`. Puede omitir los grafos si solo necesita revisar el diseño.
+3. Ejecuta `validate_assets` para obtener diagnósticos y usa `CaptureWidget` para renderizar el diseño.
+
+Obtienes un Widget Blueprint que puedes abrir en el diseñador de UMG y una vista previa que puedes comparar con el diseño que pediste.
+
+{/* TODO: screenshot de WBP_InventoryHeader en el diseñador de UMG. */}

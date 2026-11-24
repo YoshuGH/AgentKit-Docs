@@ -1,6 +1,7 @@
 # Build output and dependencies
 dist/
 .astro/
+.lunaria/
 node_modules/
 
 # Environment and logs

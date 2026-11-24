@@ -1,0 +1,15 @@
+---
+title: Blueprints
+---
+
+Usa AgentKit para crear o inspeccionar Blueprints que no sean widgets. Para un Actor Blueprint, puedes pedir componentes, variables, valores predeterminados, event dispatchers y lógica de grafos compatible.
+
+> Crea un Actor Blueprint llamado `BP_InteractionMarker` en `/Game/AgentKitDemo`. Agrega un Scene Component llamado `Marker` bajo la raíz predeterminada y una variable de texto llamada `PromptText`, editable por instancia, con el valor predeterminado «Interactuar». Confirma que compiló.
+
+1. El agente usa `build_blueprint` para crear el Actor Blueprint y configurar el componente y la variable. Luego lo compila y guarda.
+2. Lee la configuración guardada con `describe_blueprint` para comprobar los ajustes del componente y la variable.
+3. Informa los diagnósticos que devuelva `validate_assets`.
+
+Obtienes un Actor Blueprint con un texto predeterminado que puedes cambiar por instancia en el editor.
+
+{/* TODO: screenshot de BP_InteractionMarker con el componente y la variable visibles en el editor de Blueprints. */}

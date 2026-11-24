@@ -1,0 +1,15 @@
+---
+title: MVVM
+---
+
+Use AgentKit to read the viewmodels and bindings on a Widget Blueprint and change how an existing viewmodel is created. Unreal's MVVM tools handle creating viewmodels, properties, and bindings.
+
+> Inspect the viewmodels in `WBP_InventoryHeader`. If its existing `InventoryViewModel` supports `CreateInstance`, switch to that creation mode. Tell me which bindings are configured.
+
+1. The agent reads the current viewmodel, creation mode, and bindings with `describe_mvvm`.
+2. It uses `set_viewmodel_context` to request `CreateInstance`. AgentKit checks whether the engine allows that mode and compiles and saves the Widget Blueprint if the change succeeds.
+3. The agent reads the configuration again and reports the resulting creation mode and bindings.
+
+On success, the widget creates its own viewmodel instance and keeps its existing bindings. Review the creation mode in the editor's Viewmodels panel. Captures use design-time defaults for runtime data.
+
+{/* TODO: screenshot of the Viewmodels panel showing the creation mode and bindings. */}

@@ -1,0 +1,16 @@
+---
+title: Toolsets & tools
+---
+
+AgentKit groups its tools by editor workflow. An MCP client can discover the groups with `list_toolsets` and inspect their available tools with `describe_toolset`.
+
+| Toolset | Tools | What you can ask the agent to do |
+| --- | --- | --- |
+| `AgentKitWidgetTools` | `build_widget`, `describe_widget` | Build a UMG hierarchy with properties and supported Blueprint logic, or inspect a Widget Blueprint. |
+| `AgentKitBlueprintTools` | `build_blueprint`, `describe_blueprint` | Create or update a non-widget Blueprint, or inspect its components, variables, and logic. |
+| `AgentKitAnimationTools` | `build_animations`, `describe_animations`, `sample_animation`, `diff_animation` | Author UMG animations, inspect tracks, check timing, and compare changes against the last AgentKit build. |
+| `AgentKitMVVMTools` | `describe_mvvm`, `set_viewmodel_context` | Inspect viewmodels and bindings, or change how an existing viewmodel is created. |
+| `AgentKitCaptureTools` | `CaptureWidget`, `CaptureAnimation`, `CaptureSlate` | Save PNG previews of widgets, animation poses, or the editor UI. |
+| `AgentKitAssetTools` | `validate_assets` | Load-check assets and report Blueprint compiler diagnostics. |
+
+The separate MCP tool `agentkit_view_image` lets the agent view a saved capture as an image when it lacks local file access.

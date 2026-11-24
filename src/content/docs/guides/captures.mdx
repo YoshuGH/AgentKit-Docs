@@ -1,0 +1,15 @@
+---
+title: Captures
+---
+
+Use captures to review how a Widget Blueprint renders, compare poses of a UMG animation, or show the Unreal Editor window to your agent. Captures require an editor session with rendering enabled.
+
+> Capture `WBP_InventoryHeader` at 640 by 120 with a DPI scale of 1. Show me the image and tell me whether the title or item count gets clipped.
+
+1. The agent uses `CaptureWidget` to render the compiled widget offscreen. AgentKit saves the PNG under `Saved/AgentKit/Captures` in the project.
+2. The agent opens the file or uses `agentkit_view_image` to get the image through MCP.
+3. It checks the rendered text and shares the PNG or its location with you.
+
+You get a 640 × 120 image you can review without launching the game. For a grid of animation poses, ask for `CaptureAnimation`. To capture the editor's main window, ask for `CaptureSlate` and leave the window restored.
+
+{/* TODO: screenshot showing the inventory header PNG at 640 by 120. */}

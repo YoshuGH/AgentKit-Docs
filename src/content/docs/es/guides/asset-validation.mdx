@@ -1,0 +1,15 @@
+---
+title: Validación de recursos
+---
+
+Usa la validación después de editar Blueprints o antes de entregar cambios a otra persona. Comprueba que los recursos carguen e informa los diagnósticos de compilación de los Blueprints.
+
+> Valida `WBP_InventoryHeader` y `BP_InteractionMarker` en `/Game/AgentKitDemo`. Para cada recurso, dime si cargó y enumera los errores o advertencias del compilador. Déjame revisar las posibles correcciones.
+
+1. El agente envía las rutas de los recursos a `validate_assets`.
+2. AgentKit carga ambos recursos y compila los Blueprints sin guardarlos.
+3. El agente agrupa los diagnósticos por recurso y gravedad.
+
+Obtienes una lista de problemas para revisar o la confirmación de que la validación terminó sin diagnósticos. Consulta el Output Log si el compilador falla sin devolver un mensaje.
+
+{/* TODO: screenshot de los diagnósticos de compilación de un Blueprint en Unreal Editor. */}

@@ -1,0 +1,15 @@
+---
+title: MVVM
+---
+
+Usa AgentKit para consultar los viewmodels y los enlaces de un Widget Blueprint, y para cambiar cómo se crea un viewmodel existente. Las herramientas MVVM de Unreal permiten crear viewmodels, propiedades y enlaces.
+
+> Inspecciona los viewmodels de `WBP_InventoryHeader`. Si el viewmodel existente `InventoryViewModel` admite `CreateInstance`, cambia a ese modo de creación. Dime qué enlaces están configurados.
+
+1. El agente lee el viewmodel, el modo de creación y los enlaces actuales con `describe_mvvm`.
+2. Usa `set_viewmodel_context` para solicitar `CreateInstance`. AgentKit verifica si el motor admite ese modo y, si el cambio se aplica, compila y guarda el Widget Blueprint.
+3. El agente lee la configuración de nuevo e informa el modo de creación y los enlaces resultantes.
+
+Si el cambio se aplica, el widget crea su propia instancia del viewmodel y conserva sus enlaces. Revisa el modo de creación en el panel Viewmodels del editor. Las capturas usan valores predeterminados de diseño para los datos que se generan al ejecutar el juego.
+
+{/* TODO: screenshot del panel Viewmodels con el modo de creación y los enlaces visibles. */}

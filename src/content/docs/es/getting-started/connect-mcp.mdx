@@ -1,0 +1,12 @@
+---
+title: Conectar un cliente MCP
+---
+
+1. Abre tu proyecto en Unreal Editor.
+2. En **Editor Preferences → Plugins → Model Context Protocol**, activa **Auto Start Server** o inicia el servidor MCP manualmente.
+3. En tu cliente MCP, conéctate al servidor Model Context Protocol del editor.
+4. Pide a tu agente: «Enumera los conjuntos de herramientas disponibles en Unreal Editor y dime cuáles son de AgentKit». El agente usa `list_toolsets` para encontrarlos y puede usar `describe_toolset` para inspeccionar uno en particular.
+
+Si el agente no encuentra AgentKit, confirma que reiniciaste el editor después de instalarlo, que el plugin está habilitado y que el servidor MCP está en ejecución.
+
+{/* TODO: Documentar el endpoint MCP verificado, el transporte y los pasos de configuración de los clientes compatibles. */}
