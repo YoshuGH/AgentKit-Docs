@@ -49,7 +49,7 @@ export default defineConfig({
         {
           label: 'Support',
           translations: { es: 'Soporte' },
-          items: ['support', 'changelog'],
+          items: ['support', 'faq', 'changelog'],
         },
       ],
     }),

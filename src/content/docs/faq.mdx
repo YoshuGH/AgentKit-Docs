@@ -1,0 +1,44 @@
+---
+title: FAQ
+description: Common questions about AgentKit.
+---
+
+### What does AgentKit do?
+
+AgentKit adds toolsets to Unreal Editor's built-in MCP server so your AI agent can build and inspect Widget Blueprints, Blueprints, UMG animations, and MVVM viewmodel contexts, validate assets, and render widgets and animations to PNG so it can see its own work.
+
+### Which engine versions are supported?
+
+Unreal Engine 5.8. AgentKit is currently in beta (0.1.0).
+
+### Which AI agents or clients work with it?
+
+Any MCP client that connects to Unreal Editor's MCP server, such as Claude Code, Cursor, VS Code, Gemini, or Codex. See [Connect an MCP client](../getting-started/connect-mcp/). AgentKit's toolsets appear automatically once the client is connected.
+
+### Does it include an AI model or require a subscription?
+
+No. AgentKit only provides the editor tools. You bring your own MCP client and AI model.
+
+### Does it affect my packaged game?
+
+No. AgentKit is editor-only. It adds no runtime classes, engine patches, or asset formats, and nothing ships with your game.
+
+### Does AgentKit send my project data anywhere?
+
+AgentKit makes no network calls of its own. It only registers tools with the editor's MCP server. What your agent sends to its AI provider depends on the client and model you choose.
+
+### Can the agent break my assets?
+
+Build tools save the assets they change, and builds are not atomic, so a failed build can leave partial changes. By default, AgentKit refuses to overwrite an existing asset unless updates are allowed, and it protects animations you edited by hand. Use source control and experiment on new asset paths. See [Limits & safety](../reference/limits/).
+
+### Why does a capture fail or look different from the Designer?
+
+Captures need an editor with rendering enabled, so they fail under `-NullRHI`. They render at design time, so runtime data shows default values, and effects such as background blur or retainer boxes can look different. See [Captures](../guides/captures/).
+
+### Are the engine features it relies on stable?
+
+Most of the engine toolsets AgentKit builds on, including ToolsetRegistry and the MCP server, are experimental in Unreal Engine 5.8. Their APIs may change in future engine versions.
+
+### Where can I get help?
+
+Read the [Support](../support/) page to report a bug or request a feature.

@@ -1,0 +1,44 @@
+---
+title: Preguntas frecuentes
+description: Preguntas comunes sobre AgentKit.
+---
+
+### ¿Qué hace AgentKit?
+
+AgentKit agrega conjuntos de herramientas al servidor MCP integrado en Unreal Editor para que tu agente de IA pueda crear e inspeccionar Widget Blueprints, Blueprints, animaciones UMG y contextos de viewmodels de MVVM, validar recursos y renderizar widgets y animaciones a PNG para ver su propio trabajo.
+
+### ¿Qué versiones del motor son compatibles?
+
+Unreal Engine 5.8. AgentKit está en beta (0.1.0).
+
+### ¿Qué agentes o clientes de IA funcionan con AgentKit?
+
+Cualquier cliente MCP que se conecte al servidor MCP de Unreal Editor, como Claude Code, Cursor, VS Code, Gemini o Codex. Consulta [Conectar un cliente MCP](../getting-started/connect-mcp/). Los conjuntos de herramientas de AgentKit aparecen automáticamente cuando el cliente está conectado.
+
+### ¿Incluye un modelo de IA o requiere una suscripción?
+
+No. AgentKit solo aporta las herramientas del editor. Tú eliges tu cliente MCP y tu modelo de IA.
+
+### ¿Afecta a mi juego empaquetado?
+
+No. AgentKit funciona solo en el editor. No agrega clases de runtime, parches al motor ni formatos de recursos, y nada se incluye en tu juego.
+
+### ¿AgentKit envía datos de mi proyecto a algún lugar?
+
+AgentKit no hace llamadas de red propias. Solo registra herramientas en el servidor MCP del editor. Lo que tu agente envía a su proveedor de IA depende del cliente y del modelo que elijas.
+
+### ¿El agente puede dañar mis recursos?
+
+Las herramientas de creación guardan los recursos que cambian y las operaciones no son atómicas, así que una operación fallida puede dejar cambios a medias. De forma predeterminada, AgentKit no sobrescribe un recurso existente a menos que permitas actualizarlo, y protege las animaciones que editaste a mano. Usa control de versiones y experimenta en rutas nuevas. Consulta [Límites y seguridad](../reference/limits/).
+
+### ¿Por qué una captura falla o se ve distinta al diseñador?
+
+Las capturas necesitan un editor con el renderizado habilitado, así que fallan con `-NullRHI`. Se renderizan en tiempo de diseño, por lo que los datos del juego aparecen con sus valores predeterminados, y efectos como el desenfoque de fondo o los retainer boxes pueden verse distintos. Consulta [Capturas](../guides/captures/).
+
+### ¿Las funciones del motor en las que se basa son estables?
+
+La mayoría de los conjuntos de herramientas del motor en los que se basa AgentKit, incluidos ToolsetRegistry y el servidor MCP, son experimentales en Unreal Engine 5.8. Sus APIs pueden cambiar en versiones futuras del motor.
+
+### ¿Dónde puedo obtener ayuda?
+
+Consulta la página de [Soporte](../support/) para reportar un error o pedir una función.
