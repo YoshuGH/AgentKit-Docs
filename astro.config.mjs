@@ -8,6 +8,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'AgentKit',
+      logo: { src: './src/assets/agentkit-icon.png' },
       defaultLocale: 'root',
       locales: {
         root: { label: 'English', lang: 'en' },
